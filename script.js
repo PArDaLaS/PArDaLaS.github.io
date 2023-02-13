@@ -90,6 +90,7 @@ function createFallingFlowers() {
     //  flower.height=70;
     //  flower.width=70;
       // Add the flower to the stage and the flowers array
+        flower.tint = Math.random() * 0xFFFFFF;
       flowersContainer.addChild(flower);
       flowers.push(flower);
     });
