@@ -24,13 +24,13 @@ for (let i = 0; i < 5; i++) {
 }
 
 // Create the Snake's velocity
-let vx = 10;
+let vx = 4;
 let vy = 0;
 
 // Create the food
 const food = new PIXI.Graphics();
 food.beginFill(0xff0000);
-food.drawCircle(0, 0, 5);
+food.drawCircle(0, 0, 10);
 food.endFill();
 food.x = Math.random() * app.screen.width;
 food.y = Math.random() * app.screen.height;
@@ -40,20 +40,20 @@ app.stage.addChild(food);
 document.addEventListener("keydown", (event) => {
   switch (event.keyCode) {
     case 37: // left
-      vx = -10;
+      vx = -4;
       vy = 0;
       break;
     case 38: // up
       vx = 0;
-      vy = -10;
+      vy = -4;
       break;
     case 39: // right
-      vx = 10;
+      vx = 4;
       vy = 0;
       break;
     case 40: // down
       vx = 0;
-      vy = 10;
+      vy = 4;
       break;
   }
 });
