@@ -68,7 +68,7 @@ function createFallingFlowers() {
   document.body.appendChild(app.view);
 
   // Load an image of a flower
-  PIXI.Loader.shared.add("flower", "flower.png").load(setup);
+  PIXI.Loader.shared.add("flower", "sample.jpg").load(setup);
 
   function setup() {
     // Create an array to store the falling flowers
@@ -77,6 +77,9 @@ function createFallingFlowers() {
     // Create a container to hold the flowers
     const flowersContainer = new PIXI.Container();
     app.stage.addChild(flowersContainer);
+      
+      flowersContainer.x = app.screen.width / 2;
+      flowersContainer.y = app.screen.height / 2;
 
     // Create a loop to add new flowers to the stage
     app.ticker.add((delta) => {
