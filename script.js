@@ -100,7 +100,7 @@ function createFallingFlowers() {
       for (let i = 0; i < flowers.length; i++) {
         const flower = flowers[i];
         flower.y += 5;
-        flower.rotation += 0.05;
+        flower.rotation += 0.02;
 
         // Remove the flower if it goes off the bottom of the screen
         if (flower.y > app.screen.height) {
