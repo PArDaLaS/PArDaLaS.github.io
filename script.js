@@ -101,8 +101,8 @@ function createFallingFlowers() {
     app.ticker.add((delta) => {
       for (let i = 0; i < flowers.length; i++) {
         const flower = flowers[i];
-        flower.y += 10;
-        flower.rotation += 0.1;
+        flower.y += 3;
+        flower.rotation += 0.03;
 
         // Remove the flower if it goes off the bottom of the screen
         if (flower.y > app.screen.height) {
