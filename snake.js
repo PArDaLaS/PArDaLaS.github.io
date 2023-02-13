@@ -2,7 +2,7 @@ function playSnake(){
 
 // Create the PixiJS application
 const app = new PIXI.Application({
-  width: 1000,
+  width: 800,
   height: 800,
   backgroundColor: pink,
 });
