@@ -83,10 +83,6 @@ app.ticker.add((delta) => {
     snake.push(newSegment);
     app.stage.addChild(newSegment);
 
-    // Move the food to a new random position
-    food.x = Math.random() * app.screen.width;
-    food.y = Math
-
 
        // Move the food to a new random position
     food.x = Math.random() * app.screen.width;
