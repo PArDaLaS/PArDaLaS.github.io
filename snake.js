@@ -4,7 +4,7 @@ function playSnake(){
 const app = new PIXI.Application({
   width: 800,
   height: 800,
-  backgroundColor: pink,
+  backgroundColor: 0x1099bb,
 });
 
 // Add the PixiJS application to the HTML page
@@ -14,7 +14,7 @@ document.body.appendChild(app.view);
 const snake = [];
 for (let i = 0; i < 5; i++) {
   const segment = new PIXI.Graphics();
-  segment.beginFill(magenta);
+  segment.beginFill(0xffffff);
   segment.drawRect(0, 0, 10, 10);
   segment.endFill();
   segment.x = 200 + i * 10;
