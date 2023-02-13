@@ -2,9 +2,9 @@ function playSnake(){
 
 // Create the PixiJS application
 const app = new PIXI.Application({
-  width: 400,
-  height: 400,
-  backgroundColor: 0x1099bb,
+  width: 1000,
+  height: 800,
+  backgroundColor: pink,
 });
 
 // Add the PixiJS application to the HTML page
@@ -14,7 +14,7 @@ document.body.appendChild(app.view);
 const snake = [];
 for (let i = 0; i < 5; i++) {
   const segment = new PIXI.Graphics();
-  segment.beginFill(0xffffff);
+  segment.beginFill(magenta);
   segment.drawRect(0, 0, 10, 10);
   segment.endFill();
   segment.x = 200 + i * 10;
@@ -24,7 +24,7 @@ for (let i = 0; i < 5; i++) {
 }
 
 // Create the Snake's velocity
-let vx = 10;
+let vx = 3;
 let vy = 0;
 
 // Create the food
@@ -40,20 +40,20 @@ app.stage.addChild(food);
 document.addEventListener("keydown", (event) => {
   switch (event.keyCode) {
     case 37: // left
-      vx = -10;
+      vx = -3;
       vy = 0;
       break;
     case 38: // up
       vx = 0;
-      vy = -10;
+      vy = -3;
       break;
     case 39: // right
-      vx = 10;
+      vx = 3;
       vy = 0;
       break;
     case 40: // down
       vx = 0;
-      vy = 10;
+      vy = 3;
       break;
   }
 });
