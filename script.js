@@ -112,3 +112,41 @@ function createFallingFlowers() {
     });
   }
 }
+
+function createSparkles() {
+  // Create a container to hold the sparkles
+  const sparkles = new PIXI.Container();
+
+  // Create a sprite for each sparkle
+  for (let i = 0; i < 50; i++) {
+    const sparkle = PIXI.Sprite.from("sparkle.png");
+    sparkle.anchor.set(0.5);
+    sparkle.scale.set(0.5 + Math.random() * 0.5);
+    sparkle.alpha = 0;
+    sparkles.addChild(sparkle);
+  }
+
+  // Add the sparkles container to the stage
+  app.stage.addChild(sparkles);
+
+  // Listen for the mouse move event
+  app.renderer.plugins.interaction.on("mousemove", (event) => {
+    // Get the mouse position
+    const mousePosition = event.data.global;
+
+    // Loop through each sparkle and update its position
+    sparkles.children.forEach((sparkle) => {
+      sparkle.x = mousePosition.x + Math.random() * 10 - 5;
+      sparkle.y = mousePosition.y + Math.random() * 10 - 5;
+      sparkle.alpha = 1;
+    });
+  });
+
+  // Use the ticker to animate the sparkles
+  app.ticker.add((delta) => {
+    sparkles.children.forEach((sparkle) => {
+      sparkle.alpha -= delta * 0.05;
+    });
+  });
+}
+
