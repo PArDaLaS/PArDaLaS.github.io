@@ -122,6 +122,7 @@ function createSparkles() {
     const sparkle = PIXI.Sprite.from("sparkles.jpg");
     sparkle.anchor.set(0.5);
     sparkle.scale.set(0.5 + Math.random() * 0.5);
+    sparkle.tint = Math.random() * 0xFFFFFF;
     sparkle.alpha = 0;
     sparkles.addChild(sparkle);
     
@@ -140,14 +141,14 @@ function createSparkles() {
       sparkle.x = mousePosition.x + Math.random() * 10 - 5;
       sparkle.y = mousePosition.y + Math.random() * 10 - 5;
       sparkle.alpha = 1;
-      sparkle.tint = Math.random() * 0xFFFFFF;
+   
     });
   });
 
   // Use the ticker to animate the sparkles
   app.ticker.add((delta) => {
     sparkles.children.forEach((sparkle) => {
-      sparkle.alpha -= delta * 0.05;
+      sparkle.alpha -= delta * 0.01;
     });
   });
 }
