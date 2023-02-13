@@ -87,7 +87,8 @@ function createFallingFlowers() {
       flower.x = Math.random() * app.screen.width;
       flower.y = -100;
       flower.scale.x = flower.scale.y = 0.1 + Math.random() * 0.3;
-
+      flower.height=70;
+      flower.width=70;
       // Add the flower to the stage and the flowers array
       flowersContainer.addChild(flower);
       flowers.push(flower);
