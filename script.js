@@ -114,6 +114,7 @@ function createFallingFlowers() {
 }
 
 function createSparkles() {
+    alert("starts");
   // Create a container to hold the sparkles
   const sparkles = new PIXI.Container();
 
@@ -146,7 +147,7 @@ function createSparkles() {
    
     });
   });
-
+    alert("this should work");
   // Use the ticker to animate the sparkles
   app.ticker.add((delta) => {
     sparkles.children.forEach((sparkle) => {
