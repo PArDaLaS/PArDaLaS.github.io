@@ -123,8 +123,6 @@ function createSparkles() {
     sparkle.anchor.set(0.5);
     sparkle.scale.set(0.5 + Math.random() * 0.5);
     sparkle.alpha = 0;
-    sparkle.width=10;
-    sparkle.height=10;
     sparkles.addChild(sparkle);
     
   }
