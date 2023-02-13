@@ -68,7 +68,7 @@ function createFallingFlowers() {
   document.body.appendChild(app.view);
 
   // Load an image of a flower
-  PIXI.Loader.shared.add("flower", "sample.jpg").load(setup);
+  PIXI.Loader.shared.add("flower", "flower.png").load(setup);
 
   function setup() {
     // Create an array to store the falling flowers
