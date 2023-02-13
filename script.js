@@ -77,9 +77,6 @@ function createFallingFlowers() {
     // Create a container to hold the flowers
     const flowersContainer = new PIXI.Container();
     app.stage.addChild(flowersContainer);
-      
-      flowersContainer.x = app.screen.width / 2;
-      flowersContainer.y = app.screen.height / 2;
 
     // Create a loop to add new flowers to the stage
     app.ticker.add((delta) => {
