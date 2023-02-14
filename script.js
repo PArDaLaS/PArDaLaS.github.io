@@ -130,7 +130,7 @@ function createSparkles() {
     sparkles.addChild(sparkle);
     
   }
-
+    alert("somewhere in the middle");
   // Add the sparkles container to the stage
   app.stage.addChild(sparkles);
 
@@ -138,7 +138,7 @@ function createSparkles() {
   app.renderer.plugins.interaction.on("mousemove", (event) => {
     // Get the mouse position
     const mousePosition = event.data.global;
-
+    alert("this?");
     // Loop through each sparkle and update its position
     sparkles.children.forEach((sparkle) => {
       sparkle.x = mousePosition.x + Math.random() * 10 - 5;
@@ -150,6 +150,7 @@ function createSparkles() {
     alert("this should work");
   // Use the ticker to animate the sparkles
   app.ticker.add((delta) => {
+      alert("and that?");
     sparkles.children.forEach((sparkle) => {
       sparkle.alpha -= delta * 0.01;
     });
