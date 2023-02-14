@@ -120,18 +120,15 @@ function createSparkles() {
 
   // Create a sprite for each sparkle
   for (let i = 0; i < 50; i++) {
-      alert("loop before image");
     const sparkle = PIXI.Sprite.from("flower.png");
-      alert("1");
+    
     sparkle.anchor.set(0.5);
-      sparkle.height=10;
-      sparkle.width=10;
-      alert("2");
+    
     sparkle.scale.set(0.5 + Math.random() * 0.5);
     sparkle.tint = Math.random() * 0xFFFFFF;
     sparkle.alpha = 0;
     sparkles.addChild(sparkle);
-      alert("3");
+     
     
   }
     alert("somewhere in the middle");
