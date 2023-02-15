@@ -60,10 +60,22 @@ function flowers() {
 
 function createFallingFlowers() {
   // Create a PixiJS application
+    
+    // Generate random values for red, green, and blue within different ranges
+    var r = Math.floor(Math.random() * 128) + 128;  // Shades of purple: 128-255
+    var g = Math.floor(Math.random() * 128);        // Shades of purple: 0-127
+    var b = Math.floor(Math.random() * 128) + 128;  // Shades of pink: 128-255
+
+    // Combine the red, green, and blue color channels into a single 24-bit number
+    var rgb = (r << 16) | (g << 8) | b ;
+
+    // Convert the 24-bit number to a hex color string and prepend a "0x" to indicate that it is a hex color value
+    var hex = "0x" + rgb.toString(16);
+    
   const app = new PIXI.Application({
     width: window.innerWidth,
     height: window.innerHeight,
-    backgroundColor: 0x1099bb,
+    backgroundColor: hex,
   });
   document.body.appendChild(app.view);
 
