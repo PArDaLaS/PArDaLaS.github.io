@@ -27,7 +27,7 @@ function flowers() {
 // create a new Sprite from an image path.
     for (let i = 0; i < 70; i++) {
 
-    let bunny = PIXI.Sprite.from('flower.png');
+    let bunny = PIXI.Sprite.from('../flower.png');
 
     bunny.height = "70";
     bunny.length = "70";
@@ -80,7 +80,7 @@ function createFallingFlowers() {
   document.body.appendChild(app.view);
 
   // Load an image of a flower
-  PIXI.Loader.shared.add("flower", 'flower.png').load(setup);
+  PIXI.Loader.shared.add("flower", '../flower.png').load(setup);
 
   function setup() {
     // Create an array to store the falling flowers
@@ -132,7 +132,7 @@ function createSparkles() {
 
   // Create a sprite for each sparkle
   for (let i = 0; i < 50; i++) {
-    const sparkle = PIXI.Sprite.from("flower.png");
+    const sparkle = PIXI.Sprite.from("../flower.png");
     
     sparkle.anchor.set(0.5);
     
