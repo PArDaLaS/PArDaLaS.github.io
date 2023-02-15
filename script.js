@@ -85,7 +85,7 @@ function createFallingFlowers() {
 
       // Set the flower's position and scale
       flower.x = Math.random() * app.screen.width;
-      flower.y = -100;
+      flower.y = -Math.random() * app.renderer.screen.height;
       flower.scale.x = flower.scale.y = 0.1 + Math.random() * 0.3;
       flower.height=50;
       flower.width=50;
