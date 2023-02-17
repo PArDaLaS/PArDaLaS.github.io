@@ -203,9 +203,12 @@ function test509() {
 // Add an event listener to update the position of the sparkles
     console.log("Adding a mousemove event listener");
     document.addEventListener('mousemove', (event) => {
+const mousePosition = event.data.global;
         for (let i = 0; i < sparkles.length; i++) {
             const sparkle = sparkles[i];
-            const mousePosition = event.data.global;
+            
+sparkle.x=mousePosition.x+2*Math.random();
+            sparkle.y=mousePosition.y-i-2*Math.random();
             const distance = Math.sqrt(
                 (sparkle.x - event.clientX) ** 2 + (sparkle.y - event.clientY) ** 2
             );
@@ -214,8 +217,7 @@ function test509() {
             } else {
                 sparkle.alpha -= 0.3;
             }
-            sparkle.x=mousePosition.x+2*Math.random();
-            sparkle.y=mousePosition.y-i-2*Math.random();
+            
         }
     });
 
