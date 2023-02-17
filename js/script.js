@@ -170,3 +170,90 @@ function createSparkles() {
   });
 }
 
+function test509() {
+// Create a PixiJS Application
+    const app = new PIXI.Application({
+        width: window.innerWidth,
+        height: window.innerHeight,
+        transparent: true,
+    });
+
+// Add the canvas to the DOM
+    console.log("Adding canvas to the DOM");
+
+    document.body.appendChild(app.view);
+
+// Create an empty container to hold the sparkles
+    console.log("Creating a container for sparkles");
+
+    const sparklesContainer = new PIXI.Container();
+    app.stage.addChild(sparklesContainer);
+
+// Set up the sparkle texture
+    console.log("Loading the sparkle texture");
+
+    const sparkleTexture = PIXI.Texture.from("flower.png");
+    sparkleTexture.width=30;
+    sparkleTexture.height=30;
+// Set up an array to hold all the sparkles
+    console.log("Creating an array for sparkles");
+
+    const sparkles = [50];
+
+// Add an event listener to update the position of the sparkles
+    console.log("Adding a mousemove event listener");
+    document.addEventListener('mousemove', (event) => {
+        for (let i = 0; i < sparkles.length; i++) {
+            const sparkle = sparkles[i];
+            const distance = Math.sqrt(
+                (sparkle.x - event.clientX) ** 2 + (sparkle.y - event.clientY) ** 2
+            );
+            if (distance < 100) {
+                sparkle.alpha = (100 - distance) / 10;
+            } else {
+                sparkle.alpha -= 0.1;
+            }
+        }
+    });
+
+// Create a function to add new sparkles
+    console.log("Creating a function to add sparkles");
+
+    function addSparkles() {
+        const sparkle = new PIXI.Sprite(sparkleTexture);
+        sparkle.anchor.set(0.5);
+        sparkle.x = Math.random() * window.innerWidth;
+        sparkle.y = Math.random() * window.innerHeight;
+        sparkle.alpha = 0;
+        sparkle.height=2*Math.random()+30;
+        sparkle.width=2*Math.random()+30;
+        sparklesContainer.addChild(sparkle);
+        sparkles.push(sparkle);
+    }
+// Call the addSparkles function every 500 milliseconds
+    console.log("Calling addSparkles every 500ms");
+
+    setInterval(addSparkles, 100);
+
+// Set up the update function to animate the sparkles
+    console.log("Setting up an update function");
+
+    function update() {
+        for (let i = 0; i < sparkles.length; i++) {
+            const sparkle = sparkles[i];
+            sparkle.y += 1;
+            sparkle.rotation += 0.1;
+            if (sparkle.y > window.innerHeight) {
+                sparklesContainer.removeChild(sparkle);
+                sparkles.splice(i, 1);
+            }
+        }
+    }
+
+// Start the PixiJS Application
+    console.log("Starting the PixiJS application");
+
+    app.ticker.add(update);
+}
+
+
