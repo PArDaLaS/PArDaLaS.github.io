@@ -192,7 +192,7 @@ function test509() {
 // Set up the sparkle texture
     console.log("Loading the sparkle texture");
 
-    const sparkleTexture = PIXI.Texture.from("flower.png");
+    const sparkleTexture = PIXI.Texture.from("../flower.png");
     sparkleTexture.width=30;
     sparkleTexture.height=30;
 // Set up an array to hold all the sparkles
