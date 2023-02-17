@@ -205,14 +205,17 @@ function test509() {
     document.addEventListener('mousemove', (event) => {
         for (let i = 0; i < sparkles.length; i++) {
             const sparkle = sparkles[i];
+            const mousePosition = event.data.global;
             const distance = Math.sqrt(
                 (sparkle.x - event.clientX) ** 2 + (sparkle.y - event.clientY) ** 2
             );
             if (distance < 100) {
                 sparkle.alpha = (100 - distance) / 10;
             } else {
-                sparkle.alpha -= 0.1;
+                sparkle.alpha -= 0.3;
             }
+            sparkle.x=mousePosition.x+2*Math.random();
+            sparkle.y=mousePosition.y-i-2*Math.random();
         }
     });
 
