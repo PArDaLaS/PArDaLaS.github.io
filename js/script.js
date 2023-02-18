@@ -215,7 +215,7 @@ function test509() {
             sparkle.y=event.clientY-(20*i*Math.random());
             
             if (distance < 100) {
-                sparkle.alpha = (100*Math.random() - distance) / 100;
+                sparkle.alpha = Math.random()*(1 - 0.1) - 0.1;
             } else {
                 sparkle.alpha = 0;
             }
