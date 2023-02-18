@@ -248,7 +248,7 @@ function test509() {
     function update() {
         for (let i = 0; i < sparkles.length; i++) {
             const sparkle = sparkles[i];
-            sparkle.y -= 10;
+            sparkle.y += 1;
             sparkle.rotation += 0.1;
             sparkle.alpha-=0.0001;
             if (sparkle.y > window.innerHeight) {
