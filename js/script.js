@@ -202,7 +202,7 @@ function test509() {
 
 // Add an event listener to update the position of the sparkles
     console.log("Adding a mousemove event listener");
-    document.addEventListener('mousemove', (event) => {
+    app.renderer.plugins.interaction.on("mousemove", (event) => {
 const mousePosition = event.data.global;
         for (let i = 0; i < sparkles.length; i++) {
             const sparkle = sparkles[i];
