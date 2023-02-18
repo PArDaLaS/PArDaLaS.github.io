@@ -248,10 +248,9 @@ function test509() {
     function update() {
         for (let i = 0; i < sparkles.length; i++) {
             const sparkle = sparkles[i];
-            sparkle.y -= 5;
-            sparkle.x+=3;
+            sparkle.y -= 3;
             sparkle.rotation += 0.1;
-            sparkle.alpha-=0.01;
+            sparkle.alpha-=0.001;
             if (sparkle.y > window.innerHeight) {
                 sparklesContainer.removeChild(sparkle);
                 sparkles.splice(i, 1);
