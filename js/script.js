@@ -212,7 +212,7 @@ function test509() {
             }else{
                 sparkle.x=event.clientX-10*Math.random();
             }
-            sparkle.y=event.clientY-(10*i*Math.random());
+            //sparkle.y=event.clientY-(10*i*Math.random());
             
             if (distance < 100) {
                 sparkle.alpha = (100*Math.random() - distance) / 100;
@@ -228,6 +228,8 @@ function test509() {
 
     function addSparkles() {
         const sparkle = new PIXI.Sprite(sparkleTexture);
+        sparkle.x = Math.random() * window.innerWidth;
+        sparkle.y = Math.random() * window.innerHeight;
         sparkle.anchor.set(0.5);
         sparkle.alpha = 0;
         sparkle.height=20*Math.random();
