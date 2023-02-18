@@ -232,8 +232,9 @@ function test509() {
         sparkle.y = Math.random() * window.innerHeight;
         sparkle.anchor.set(0.5);
         sparkle.alpha = 0;
-        sparkle.height=30*Math.random();
-        sparkle.width=30*Math.random();
+        let k=35*Math.random();
+        sparkle.height=k;
+        sparkle.width=k;
         sparklesContainer.addChild(sparkle);
         sparkles.push(sparkle);
     }
@@ -250,7 +251,7 @@ function test509() {
             const sparkle = sparkles[i];
             sparkle.y += 1;
             sparkle.rotation += 0.1;
-            sparkle.alpha-=0.0001;
+            sparkle.alpha-=0.0003;
             if (sparkle.y > window.innerHeight) {
                 sparklesContainer.removeChild(sparkle);
                 sparkles.splice(i, 1);
