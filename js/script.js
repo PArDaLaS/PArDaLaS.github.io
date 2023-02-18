@@ -215,7 +215,7 @@ function test509() {
                 (sparkle.x - event.clientX) ** 2 + (sparkle.y - event.clientY) ** 2
             );
             if (distance < 100) {
-                sparkle.alpha = (100 - distance) / 10;
+                sparkle.alpha = (100*Math.random() - distance) / 100;
             } else {
                 sparkle.alpha = 0;
             }
@@ -229,11 +229,9 @@ function test509() {
     function addSparkles() {
         const sparkle = new PIXI.Sprite(sparkleTexture);
         sparkle.anchor.set(0.5);
-        sparkle.x = Math.random() * window.innerWidth;
-        sparkle.y = Math.random() * window.innerHeight;
         sparkle.alpha = 0;
-        sparkle.height=2*Math.random()+30;
-        sparkle.width=2*Math.random()+30;
+        sparkle.height=20*Math.random();
+        sparkle.width=20*Math.random();
         sparklesContainer.addChild(sparkle);
         sparkles.push(sparkle);
     }
@@ -248,7 +246,8 @@ function test509() {
     function update() {
         for (let i = 0; i < sparkles.length; i++) {
             const sparkle = sparkles[i];
-            sparkle.y -= 1;
+            sparkle.y -= 5;
+            sparkle.x+=3;
             sparkle.rotation += 0.1;
             if (sparkle.y > window.innerHeight) {
                 sparklesContainer.removeChild(sparkle);
