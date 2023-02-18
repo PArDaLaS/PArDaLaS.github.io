@@ -199,7 +199,7 @@ function test509() {
     console.log("Creating an array for sparkles");
 
     const sparkles = [20];
-
+    let mx=0,my=0;
 // Add an event listener to update the position of the sparkles
     console.log("Adding a mousemove event listener");
         document.addEventListener('mousemove', (event) => {
@@ -208,11 +208,11 @@ function test509() {
             const distance = Math.sqrt((sparkle.x - event.clientX) ** 2 + (sparkle.y - event.clientY) ** 2);
             
             if(Math.random()>0.5){
-                sparkle.x=event.clientX+10*Math.random();
+                mx=event.clientX+10*Math.random();
             }else{
-                sparkle.x=event.clientX-10*Math.random();
+                mx=event.clientX-10*Math.random();
             }
-            sparkle.y=event.clientY+(10*i*Math.random());
+            my=event.clientY+(10*i*Math.random());
             
             if (distance < 100) {
                 sparkle.alpha = Math.random()*(1 - 0.1) - 0.1;
@@ -228,8 +228,8 @@ function test509() {
 
     function addSparkles() {
         const sparkle = new PIXI.Sprite(sparkleTexture);
-        sparkle.x = Math.random() * window.innerWidth;
-        sparkle.y = Math.random() * window.innerHeight;
+        sparkle.x = mx;
+        sparkle.y = my;
         sparkle.anchor.set(0.5);
         sparkle.alpha = 0;
         let k=35*Math.random();
@@ -251,7 +251,7 @@ function test509() {
             const sparkle = sparkles[i];
             sparkle.y += 1;
             sparkle.rotation += 0.1;
-            sparkle.alpha-=0.0003;
+            sparkle.alpha-=0.001;
             if (sparkle.y > window.innerHeight) {
                 sparklesContainer.removeChild(sparkle);
                 sparkles.splice(i, 1);
