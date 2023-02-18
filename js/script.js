@@ -205,9 +205,12 @@ function test509() {
         document.addEventListener('mousemove', (event) => {
         for (let i = 0; i < sparkles.length; i++) {
             const sparkle = sparkles[i];
-            
-            sparkle.x=event.clientX+2*Math.random();
-            sparkle.y=event.clientY-i*2*Math.random();
+            if(Math.random()>0.5){
+                sparkle.x=event.clientX+10*Math.random();
+            }else{
+                sparkle.x=event.clientX-10*Math.random();
+            }
+            sparkle.y=event.clientY-i*4*Math.random();
             const distance = Math.sqrt(
                 (sparkle.x - event.clientX) ** 2 + (sparkle.y - event.clientY) ** 2
             );
@@ -245,7 +248,7 @@ function test509() {
     function update() {
         for (let i = 0; i < sparkles.length; i++) {
             const sparkle = sparkles[i];
-            sparkle.y += 1;
+            sparkle.y -= 1;
             sparkle.rotation += 0.1;
             if (sparkle.y > window.innerHeight) {
                 sparklesContainer.removeChild(sparkle);
