@@ -212,7 +212,7 @@ function test509() {
             }else{
                 sparkle.x=event.clientX-10*Math.random();
             }
-            sparkle.y=event.clientY-(10*i*Math.random());
+            sparkle.y=event.clientY-(20*i*Math.random());
             
             if (distance < 100) {
                 sparkle.alpha = (100*Math.random() - distance) / 100;
@@ -248,9 +248,9 @@ function test509() {
     function update() {
         for (let i = 0; i < sparkles.length; i++) {
             const sparkle = sparkles[i];
-            sparkle.y -= 3;
+            sparkle.y -= 10;
             sparkle.rotation += 0.1;
-            sparkle.alpha-=0.001;
+            sparkle.alpha-=0.0001;
             if (sparkle.y > window.innerHeight) {
                 sparklesContainer.removeChild(sparkle);
                 sparkles.splice(i, 1);
