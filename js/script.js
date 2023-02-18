@@ -214,7 +214,7 @@ function test509() {
             if (distance < 100) {
                 sparkle.alpha = (100 - distance) / 10;
             } else {
-                sparkle.alpha -= 0.3;
+                sparkle.alpha = 0;
             }
             
         }
