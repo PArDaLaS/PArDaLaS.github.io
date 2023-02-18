@@ -212,7 +212,7 @@ function test509() {
             }else{
                 sparkle.x=event.clientX-10*Math.random();
             }
-            //sparkle.y=event.clientY-(10*i*Math.random());
+            sparkle.y=event.clientY-(10*i*Math.random());
             
             if (distance < 100) {
                 sparkle.alpha = (100*Math.random() - distance) / 100;
@@ -232,8 +232,8 @@ function test509() {
         sparkle.y = Math.random() * window.innerHeight;
         sparkle.anchor.set(0.5);
         sparkle.alpha = 0;
-        sparkle.height=20*Math.random();
-        sparkle.width=20*Math.random();
+        sparkle.height=30*Math.random();
+        sparkle.width=30*Math.random();
         sparklesContainer.addChild(sparkle);
         sparkles.push(sparkle);
     }
@@ -251,7 +251,7 @@ function test509() {
             sparkle.y -= 5;
             sparkle.x+=3;
             sparkle.rotation += 0.1;
-            sparkle.alpha-=0.1;
+            sparkle.alpha-=0.01;
             if (sparkle.y > window.innerHeight) {
                 sparklesContainer.removeChild(sparkle);
                 sparkles.splice(i, 1);
