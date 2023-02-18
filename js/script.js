@@ -228,8 +228,8 @@ function test509() {
 
     function addSparkles() {
         const sparkle = new PIXI.Sprite(sparkleTexture);
-        sparkle.x = mx;
-        sparkle.y = my;
+       
+       
         sparkle.anchor.set(0.5);
         sparkle.alpha = 0;
         let k=35*Math.random();
@@ -249,6 +249,9 @@ function test509() {
     function update() {
         for (let i = 0; i < sparkles.length; i++) {
             const sparkle = sparkles[i];
+            sparkle.x=mx;
+            my+=1;
+            sparkle.y=my;
             sparkle.y += 1;
             sparkle.rotation += 0.1;
             sparkle.alpha-=0.001;
