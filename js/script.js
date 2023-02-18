@@ -251,6 +251,7 @@ function test509() {
             sparkle.y -= 5;
             sparkle.x+=3;
             sparkle.rotation += 0.1;
+            sparkle.alpha-=0.1;
             if (sparkle.y > window.innerHeight) {
                 sparklesContainer.removeChild(sparkle);
                 sparkles.splice(i, 1);
