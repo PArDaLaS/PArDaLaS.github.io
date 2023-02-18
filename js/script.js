@@ -205,15 +205,15 @@ function test509() {
         document.addEventListener('mousemove', (event) => {
         for (let i = 0; i < sparkles.length; i++) {
             const sparkle = sparkles[i];
+            const distance = Math.sqrt((sparkle.x - event.clientX) ** 2 + (sparkle.y - event.clientY) ** 2);
+            
             if(Math.random()>0.5){
                 sparkle.x=event.clientX+10*Math.random();
             }else{
                 sparkle.x=event.clientX-10*Math.random();
             }
-            sparkle.y=event.clientY-i*4*Math.random();
-            const distance = Math.sqrt(
-                (sparkle.x - event.clientX) ** 2 + (sparkle.y - event.clientY) ** 2
-            );
+            sparkle.y=event.clientY-(10*i*Math.random());
+            
             if (distance < 100) {
                 sparkle.alpha = (100*Math.random() - distance) / 100;
             } else {
