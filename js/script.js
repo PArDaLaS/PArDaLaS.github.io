@@ -212,7 +212,7 @@ function test509() {
             }else{
                 sparkle.x=event.clientX-10*Math.random();
             }
-            sparkle.y=event.clientY-(20*i*Math.random());
+            sparkle.y=event.clientY+(5*i%5*Math.random());
             
             if (distance < 100) {
                 sparkle.alpha = Math.random()*(1 - 0.1) - 0.1;
@@ -240,7 +240,7 @@ function test509() {
 // Call the addSparkles function every 500 milliseconds
     console.log("Calling addSparkles every 500ms");
 
-    setInterval(addSparkles, 200);
+    setInterval(addSparkles, 20);
 
 // Set up the update function to animate the sparkles
     console.log("Setting up an update function");
