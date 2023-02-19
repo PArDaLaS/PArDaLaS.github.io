@@ -256,7 +256,7 @@ function test509() {
             if(cy>30){
                cy=1;
             } 
-            console.log("my and Cy" + my + " " cy) ;
+            console.log("my and Cy" + my + " " +cy) ;
             sparkle.y=my[i]+cy;
             
             sparkle.rotation += 0.1;
