@@ -209,11 +209,11 @@ function test509() {
             const distance = Math.sqrt((sparkle.x - event.clientX) ** 2 + (sparkle.y - event.clientY) ** 2);
             
             if(Math.random()>0.5){
-                mx[i]=event.clientX+10*Math.random();
+                mx[i]=event.clientX;
             }else{
-                mx[i]=event.clientX-10*Math.random();
+                mx[i]=event.clientX;
             }
-            my[i]=event.clientY+(5*i*Math.random());
+            my[i]=event.clientY;
             
             if (distance < 100) {
                 sparkle.alpha = Math.random()*(1 - 0.1) - 0.1;
@@ -227,10 +227,13 @@ function test509() {
 // Create a function to add new sparkles
     console.log("Creating a function to add sparkles");
 
+    let rx=0,ry=0;
     function addSparkles() {
         const sparkle = new PIXI.Sprite(sparkleTexture);
-       
-       
+        for(let i=0;i<sparkles.length;i++){
+              rx=10*Math.random();
+              ry=5*i%3*Math.random();
+        }
         sparkle.anchor.set(0.5);
         sparkle.alpha = 0;
         let k=35*Math.random();
@@ -254,12 +257,12 @@ function test509() {
             } 
         for (let i = 0; i < sparkles.length; i++) {
             const sparkle = sparkles[i];
-            sparkle.x=mx[i];
+            sparkle.x=mx[i]+rx;
             cy+=1;
-            sparkle.y=my[i]+cy;
+            sparkle.y=my[i]+cy+ry;
             
             sparkle.rotation += 0.1;
-            sparkle.alpha-=0.005;
+            sparkle.alpha-=0.1;
             if (sparkle.y > window.innerHeight) {
                 sparklesContainer.removeChild(sparkle);
                 sparkles.splice(i, 1);
