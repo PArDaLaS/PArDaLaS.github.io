@@ -213,7 +213,7 @@ function test509() {
             }else{
                 mx[i]=event.clientX-10*Math.random();
             }
-            my[i]=event.clientY+(10*i*Math.random());
+            my[i]=event.clientY+(5*i*Math.random());
             
             if (distance < 100) {
                 sparkle.alpha = Math.random()*(1 - 0.1) - 0.1;
@@ -242,7 +242,7 @@ function test509() {
 // Call the addSparkles function every 500 milliseconds
     console.log("Calling addSparkles every 500ms");
 
-    setInterval(addSparkles, 100);
+    setInterval(addSparkles, 200);
     let cx=0,cy=0;
 
 // Set up the update function to animate the sparkles
@@ -257,11 +257,10 @@ function test509() {
                sparkle.alpha = Math.random()*(1 - 0.1) - 0.1;
                cy=1;
             } 
-            console.log("my and Cy" + my + " " +cy) ;
             sparkle.y=my[i]+cy;
             
             sparkle.rotation += 0.1;
-            sparkle.alpha-=0.001;
+            sparkle.alpha-=0.005;
             if (sparkle.y > window.innerHeight) {
                 sparklesContainer.removeChild(sparkle);
                 sparkles.splice(i, 1);
