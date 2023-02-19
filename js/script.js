@@ -254,6 +254,7 @@ function test509() {
             sparkle.x=mx[i];
             cy+=1;
             if(cy>30){
+               sparkle.alpha = Math.random()*(1 - 0.1) - 0.1;
                cy=1;
             } 
             console.log("my and Cy" + my + " " +cy) ;
