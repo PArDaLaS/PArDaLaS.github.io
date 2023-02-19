@@ -242,7 +242,7 @@ function test509() {
 // Call the addSparkles function every 500 milliseconds
     console.log("Calling addSparkles every 500ms");
 
-    setInterval(addSparkles, 200);
+    setInterval(addSparkles, 100);
     let cx=0,cy=0;
 
 // Set up the update function to animate the sparkles
@@ -253,6 +253,10 @@ function test509() {
             const sparkle = sparkles[i];
             sparkle.x=mx[i];
             cy+=1;
+            if(cy>30){
+               cy=1;
+            } 
+            console.log("my and Cy" + my + " " cy) ;
             sparkle.y=my[i]+cy;
             
             sparkle.rotation += 0.1;
