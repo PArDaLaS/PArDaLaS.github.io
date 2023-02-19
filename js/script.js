@@ -199,7 +199,8 @@ function test509() {
     console.log("Creating an array for sparkles");
 
     const sparkles = [20];
-    let mx=0,my=0;
+    let mx=[20];
+    let my=[20];
 // Add an event listener to update the position of the sparkles
     console.log("Adding a mousemove event listener");
         document.addEventListener('mousemove', (event) => {
@@ -208,11 +209,11 @@ function test509() {
             const distance = Math.sqrt((sparkle.x - event.clientX) ** 2 + (sparkle.y - event.clientY) ** 2);
             
             if(Math.random()>0.5){
-                mx=event.clientX+10*Math.random();
+                mx[i]=event.clientX+10*Math.random();
             }else{
-                mx=event.clientX-10*Math.random();
+                mx[i]=event.clientX-10*Math.random();
             }
-            my=event.clientY+(10*i*Math.random());
+            my[i]=event.clientY+(10*i*Math.random());
             
             if (distance < 100) {
                 sparkle.alpha = Math.random()*(1 - 0.1) - 0.1;
@@ -241,7 +242,8 @@ function test509() {
 // Call the addSparkles function every 500 milliseconds
     console.log("Calling addSparkles every 500ms");
 
-    setInterval(addSparkles, 20);
+    setInterval(addSparkles, 200);
+    let cx=0,cy=0;
 
 // Set up the update function to animate the sparkles
     console.log("Setting up an update function");
@@ -249,10 +251,10 @@ function test509() {
     function update() {
         for (let i = 0; i < sparkles.length; i++) {
             const sparkle = sparkles[i];
-            sparkle.x=mx;
-            my+=1;
-            sparkle.y=my;
-            sparkle.y += 1;
+            sparkle.x=mx[i];
+            cy+=1;
+            sparkle.y=my[i]+cy;
+            
             sparkle.rotation += 0.1;
             sparkle.alpha-=0.001;
             if (sparkle.y > window.innerHeight) {
