@@ -247,10 +247,9 @@ function test509() {
 
 // Set up the update function to animate the sparkles
     console.log("Setting up an update function");
-
+   
     function update() {
-        if(cy>30){
-               sparkle.alpha = Math.random()*(1 - 0.1) - 0.1;
+        if(cy>30){     
                cy=1;
             } 
         for (let i = 0; i < sparkles.length; i++) {
