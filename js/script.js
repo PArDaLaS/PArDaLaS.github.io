@@ -249,14 +249,14 @@ function test509() {
     console.log("Setting up an update function");
 
     function update() {
+        if(cy>30){
+               sparkle.alpha = Math.random()*(1 - 0.1) - 0.1;
+               cy=1;
+            } 
         for (let i = 0; i < sparkles.length; i++) {
             const sparkle = sparkles[i];
             sparkle.x=mx[i];
             cy+=1;
-            if(cy>30){
-               sparkle.alpha = Math.random()*(1 - 0.1) - 0.1;
-               cy=1;
-            } 
             sparkle.y=my[i]+cy;
             
             sparkle.rotation += 0.1;
