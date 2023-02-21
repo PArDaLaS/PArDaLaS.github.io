@@ -115,7 +115,7 @@ function createFallingFlowers() {
         flower.rotation += 0.02;
 
         // Remove the flower if it goes off the bottom of the screen
-        if (flower.y > app.screen.height) {
+        if (flower.y > (app.screen.height+30)) {
           flowersContainer.removeChild(flower);
           flowers.splice(i, 1);
           i--;
